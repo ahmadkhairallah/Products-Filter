@@ -1,0 +1,66 @@
+@import '../../Styles/_Variables.scss';
+@import '../../Styles/_Mixins.scss';
+h1 {
+    color: $primarycolor;
+
+
+   
+}
+@media screen and (max-width: $maxmobile) {
+    h1 {
+        color: $dangercolor;
+    }
+    
+}
+h3 {
+    color: $warningcolor;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 30px;
+}
+.box {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    background-color: $dangercolorsecondary;
+    border-radius: 12px;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px $primarycolor;
+    transition: 0.5s;
+
+    &:hover {
+        .overlay {
+            @include overlay;
+            border-radius: 12px;
+        }
+    }
+    @include maxmobile {
+        width: 200px;
+        height: 200px;
+    }
+    
+}
+.boxtow {
+    width: 200px;
+    height: 200px;
+    background-color: $dangercolorsecondary;
+    border-radius: 12px;
+    border: 2px solid $darkcolor;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px $primarycolor;
+    transition: 0.5s;
+    &:hover {
+        transform: scale(1.01);
+        box-shadow: 0 0 20px $primarycolor;
+        transition: 0.5s;
+        cursor: pointer;
+        background-color: $dangercolor;
+    }
+    @media screen and (max-width: $maxtablet) {
+        transform: scale(1.01);
+    }
+}
